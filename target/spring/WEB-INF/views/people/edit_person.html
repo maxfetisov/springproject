@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update person</title>
+</head>
+<body>
+<form th:method="post" th:action="@{edit}">
+    <input type="text" th:field="*{editPerson.password}"/>
+    <input type="text" th:field="*{editPerson.name}"/>
+    <input type="text" th:field="*{editPerson.email}"/>
+    <input type="submit" value="Submit"/>
+</form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>People</title>
+</head>
+<body>
+<a href="/spring_war_exploded">To start</a><br/>
+    <table>
+        <tr>
+            <th>login</th>
+            <th>password</th>
+            <th>name</th>
+            <th>email</th>
+        </tr>
+        <tr th:each="person : ${peopleList}">
+            <td><a th:href="@{people/{login}(login = ${person.login})}" th:text="${person.login}"></a></td>
+            <td th:text="${person.password}"></td>
+            <td th:text="${person.name}"></td>
+            <td th:text="${person.email}"></td>
+        </tr>
+    </table>
+    <a href="people/new">Create person</a>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New purchase</title>
+</head>
+<body>
+    <form th:method="post" th:action="@{/purchases}">
+        <input type="number" th:field="*{newPurchase.number}"/>
+        <input type="text" th:field="*{newPurchase.person.login}"/>
+        <input type="number" th:field="*{newPurchase.good.id}"/>
+        <input type="submit" value="Submit"/>
+    </form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Purchases</title>
+</head>
+<body>
+<a href="/spring_war_exploded">To start</a><br/>
+    <table>
+        <tr>
+            <th>number</th>
+            <th>person login</th>
+            <th>good id</th>
+        </tr>
+        <tr th:each="purchase : ${purchasesList}">
+            <td><a th:href="@{purchases/{number}(number = ${purchase.number})}" th:text="${purchase.number}"></a></td>
+            <td th:text="${purchase.person.login}"></td>
+            <td th:text="${purchase.good.id}"></td>
+        </tr>
+    </table>
+    <a href="purchases/new">Create purchase</a>
+</body>
+</html>

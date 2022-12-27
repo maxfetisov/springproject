@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Goods</title>
+</head>
+<body>
+<a href="/spring_war_exploded">To start</a><br/>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>price</th>
+            <th>person login</th>
+        </tr>
+        <tr th:each="good : ${goodsList}">
+            <td><a th:href="@{goods/{id}(id = ${good.id})}" th:text="${good.id}"></a></td>
+            <td th:text="${good.name}"></td>
+            <td th:text="${good.price}"></td>
+            <td th:text="${good.person.login}"></td>
+        </tr>
+    </table>
+    <a href="goods/new">Create good</a>
+</body>
+</html>

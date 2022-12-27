@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Good</title>
+</head>
+<body>
+    <p>Id:</p>
+    <p th:text="${good.id}"></p>
+    <p>Name:</p>
+    <p th:text="${good.name}"></p>
+    <p>Price:</p>
+    <p th:text=" ${good.price}"></p>
+    <p>Person Id:</p>
+    <p th:text="${good.person.login}"></p>
+    <a th:href="@{{id}/edit(id=${good.id})}">Update</a>
+    <form th:method="post" th:action="@{/goods/{id}(id=${good.id})}">
+        <input type="submit" value="Delete">
+    </form>
+</body>
+</html>
